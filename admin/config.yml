@@ -1,0 +1,306 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Enables the editorial workflow for draft/review/publish states
+publish_mode: editorial_workflow
+
+# Media files storage
+media_folder: "images"
+public_folder: "/images"
+
+# Site URL for previews
+site_url: https://clearnotcomplex.com
+display_url: https://clearnotcomplex.com
+logo_url: /images/mr-ap.png
+
+# Collections (content types)
+collections:
+
+  # ===========================
+  # WRITING / BLOG POSTS
+  # ===========================
+  - name: "writing"
+    label: "Writing"
+    label_singular: "Article"
+    folder: "writing"
+    create: true
+    slug: "{{slug}}"
+    extension: "html"
+    format: "frontmatter"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        
+      - label: "Description"
+        name: "description"
+        widget: "text"
+        hint: "Brief description for SEO and previews"
+        
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - "Essentialism"
+          - "Rationalism"
+          - "Behavioural Science"
+          - "Productivity"
+          - "Design"
+          - "Life"
+        
+      - label: "Featured Image"
+        name: "image"
+        widget: "image"
+        required: true
+        
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        
+      - label: "Read Time (minutes)"
+        name: "readtime"
+        widget: "number"
+        default: 5
+        value_type: "int"
+        min: 1
+        max: 60
+        
+      - label: "Featured"
+        name: "featured"
+        widget: "boolean"
+        default: false
+        hint: "Show on homepage"
+        
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+
+  # ===========================
+  # VISUALS / INFOGRAPHICS
+  # ===========================
+  - name: "visuals"
+    label: "Visuals"
+    label_singular: "Visual"
+    folder: "visuals"
+    create: true
+    slug: "{{slug}}"
+    extension: "html"
+    format: "frontmatter"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        
+      - label: "Description"
+        name: "description"
+        widget: "text"
+        hint: "Brief description for SEO and previews"
+        
+      - label: "Visual Image"
+        name: "image"
+        widget: "image"
+        required: true
+        hint: "The main infographic/visual"
+        
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - "Philosophy"
+          - "Productivity"
+          - "Mental Models"
+          - "Decision Making"
+          - "Psychology"
+          - "Business"
+        
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        allow_add: true
+        hint: "Comma-separated tags"
+        
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        hint: "Additional context or explanation for the visual"
+
+  # ===========================
+  # PRODUCTS / PORTFOLIO
+  # ===========================
+  - name: "products"
+    label: "Products"
+    label_singular: "Product"
+    folder: "products"
+    create: true
+    slug: "{{slug}}"
+    extension: "html"
+    format: "frontmatter"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        
+      - label: "Tagline"
+        name: "tagline"
+        widget: "string"
+        hint: "One-line description"
+        
+      - label: "Description"
+        name: "description"
+        widget: "text"
+        hint: "Brief description for SEO and previews"
+        
+      - label: "Product Type"
+        name: "type"
+        widget: "select"
+        options:
+          - "Web App"
+          - "Mobile App"
+          - "Browser Extension"
+          - "Digital Resource"
+          - "Notion Template"
+          - "Website"
+          - "Tool"
+        
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options:
+          - "In Progress"
+          - "Live"
+          - "Archived"
+        default: "In Progress"
+        
+      - label: "Featured Image"
+        name: "image"
+        widget: "image"
+        required: true
+        
+      - label: "Icon/Thumbnail"
+        name: "icon"
+        widget: "image"
+        required: false
+        hint: "Small square icon for listings"
+        
+      - label: "Live URL"
+        name: "url"
+        widget: "string"
+        required: false
+        hint: "Link to the live product"
+        
+      - label: "GitHub URL"
+        name: "github"
+        widget: "string"
+        required: false
+        
+      - label: "Featured"
+        name: "featured"
+        widget: "boolean"
+        default: false
+        hint: "Show in 'Currently Building' section"
+        
+      - label: "Order"
+        name: "order"
+        widget: "number"
+        default: 0
+        hint: "Lower numbers appear first"
+        
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+
+  # ===========================
+  # PAGES
+  # ===========================
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Home"
+        name: "home"
+        file: "content/home.yml"
+        fields:
+          - label: "Hero Headline"
+            name: "hero_headline"
+            widget: "string"
+            
+          - label: "Hero Text"
+            name: "hero_text"
+            widget: "text"
+            
+      - label: "About"
+        name: "about"
+        file: "content/about.yml"
+        fields:
+          - label: "Page Title"
+            name: "title"
+            widget: "string"
+            
+          - label: "Intro"
+            name: "intro"
+            widget: "text"
+            
+          - label: "Profile Image"
+            name: "image"
+            widget: "image"
+            
+          - label: "Name"
+            name: "name"
+            widget: "string"
+            
+          - label: "Role"
+            name: "role"
+            widget: "string"
+            
+          - label: "What I Do"
+            name: "what_i_do"
+            widget: "markdown"
+            
+          - label: "Principles"
+            name: "principles"
+            widget: "list"
+            fields:
+              - label: "Title"
+                name: "title"
+                widget: "string"
+              - label: "Description"
+                name: "description"
+                widget: "string"
+
+  # ===========================
+  # SETTINGS
+  # ===========================
+  - name: "settings"
+    label: "Settings"
+    files:
+      - label: "Site Settings"
+        name: "site"
+        file: "content/settings.yml"
+        fields:
+          - label: "Site Name"
+            name: "site_name"
+            widget: "string"
+            default: "Clear, not complex."
+            
+          - label: "Site Description"
+            name: "site_description"
+            widget: "text"
+            
+          - label: "Email"
+            name: "email"
+            widget: "string"
+            
+          - label: "LinkedIn URL"
+            name: "linkedin"
+            widget: "string"
+            
+          - label: "Twitter/X URL"
+            name: "twitter"
+            widget: "string"
+            required: false

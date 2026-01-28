@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Four Stoic Virtues — Clear, not complex.</title>
+    <meta name="description" content="A visual guide to the four cardinal virtues of Stoic philosophy: Wisdom, Courage, Justice, and Temperance.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <script>
+        (function() {
+            var savedTheme = localStorage.getItem('theme');
+            var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav__inner">
+            <a href="../index.html" class="nav__logo">Clear, <span>not complex.</span></a>
+            
+            <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <div class="nav__menu">
+                <a href="../principles.html" class="nav__link">Principles</a>
+                <a href="../articles.html" class="nav__link">Articles</a>
+                <a href="../visuals.html" class="nav__link">Visuals</a>
+                <a href="../courses.html" class="nav__link">Courses</a>
+                <a href="../tools.html" class="nav__link">Tools</a>
+                <a href="../contact.html" class="nav__link">Contact</a>
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                    </svg>
+                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="page-wrapper">
+        <div class="container">
+            
+            <a href="../visuals.html" class="back-link">← Back to Visuals</a>
+            
+            <div class="visual-single">
+                <figure class="visual-single__image">
+                    <img src="../images/placeholder-visuals.svg" alt="The Four Stoic Virtues Infographic" width="900" height="675">
+                </figure>
+                
+                <div class="visual-single__info">
+                    <h1 class="visual-single__title">The Four Stoic Virtues</h1>
+                    <p class="visual-single__meta">Philosophy • January 2025</p>
+                    
+                    <div class="visual-single__desc">
+                        <p>A visual guide to the four cardinal virtues of Stoic philosophy. The Stoics believed that living according to these virtues was the path to a good life—what they called eudaimonia.</p>
+                        
+                        <p><strong>Wisdom (Sophia)</strong> — The ability to navigate complex situations in a logical, informed, and calm manner. It's about making good judgments and understanding what truly matters.</p>
+                        
+                        <p><strong>Courage (Andreia)</strong> — Not just physical bravery, but moral courage. The strength to do what's right, face adversity, and act on your convictions even when difficult.</p>
+                        
+                        <p><strong>Justice (Dikaiosyne)</strong> — Treating others fairly and with respect. It encompasses integrity, honesty, and contributing positively to your community.</p>
+                        
+                        <p><strong>Temperance (Sophrosyne)</strong> — Self-control and moderation in all things. The discipline to resist excess and maintain balance in thoughts, actions, and emotions.</p>
+                    </div>
+                    
+                    <div class="tags mb-lg">
+                        <span class="tag">Stoicism</span>
+                        <span class="tag">Philosophy</span>
+                        <span class="tag">Virtue Ethics</span>
+                    </div>
+                    
+                    <a href="../images/visual-01.jpg" download class="btn btn--outline">Download Visual</a>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <span class="footer__copyright">© <span id="year"></span> Clear, not complex.</span>
+                <div class="footer__links">
+                    <a href="mailto:hello@clearnotcomplex.com" class="footer__link">Email</a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener" class="footer__link">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

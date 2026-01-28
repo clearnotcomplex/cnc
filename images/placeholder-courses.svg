@@ -1,0 +1,22 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="500" fill="#f5f5f3"/>
+  
+  <!-- Subtle grid pattern -->
+  <defs>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="12" r="1" fill="#e0e0de"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="500" fill="url(#grid)"/>
+  
+  <!-- Products icon - grid/apps -->
+  <g transform="translate(330, 170)">
+    <rect x="12" y="12" width="48" height="48" rx="8" stroke="#c0c0bc" stroke-width="6" fill="none"/>
+    <rect x="76" y="12" width="48" height="48" rx="8" stroke="#c0c0bc" stroke-width="6" fill="none"/>
+    <rect x="12" y="76" width="48" height="48" rx="8" stroke="#c0c0bc" stroke-width="6" fill="none"/>
+    <rect x="76" y="76" width="48" height="48" rx="8" stroke="#c0c0bc" stroke-width="6" fill="none"/>
+  </g>
+  
+  <!-- Label -->
+  <text x="400" y="360" font-family="Georgia, serif" font-size="18" fill="#a0a0a0" text-anchor="middle" font-style="italic">Products</text>
+</svg>

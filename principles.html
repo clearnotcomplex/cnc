@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principles — Clear, not complex.</title>
+    <meta name="description" content="The core principles behind Clear — a philosophy for thinking and living with clarity.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Page-specific styles -->
+    <style>
+        /* Hero Quote */
+        .principles-hero {
+            padding: var(--space-xl) 0;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .principles-hero__quote {
+            font-family: var(--serif);
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-weight: 300;
+            font-style: italic;
+            line-height: 1.5;
+            color: var(--black);
+            margin-bottom: var(--space-md);
+        }
+        
+        .principles-hero__attribution {
+            font-size: 0.9rem;
+            color: var(--grey);
+        }
+        
+        /* Manifesto Section */
+        .manifesto {
+            padding: var(--space-md) 0 var(--space-xl);
+        }
+        
+        .manifesto__intro {
+            max-width: 800px;
+            margin-bottom: var(--space-xl);
+        }
+        
+        .manifesto__intro p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--dark);
+        }
+        
+        /* Principle Cards */
+        .principles-grid {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+        
+        .principle-card {
+            display: grid;
+            grid-template-columns: 60px 1fr;
+            gap: var(--space-lg);
+            padding: var(--space-lg);
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            transition: border-color var(--duration) var(--ease), transform var(--duration) var(--ease);
+        }
+        
+        .principle-card:hover {
+            border-color: var(--light);
+            transform: translateX(4px);
+        }
+        
+        .principle-card__number {
+            font-family: var(--serif);
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: var(--light);
+            line-height: 1;
+        }
+        
+        [data-theme="dark"] .principle-card__number {
+            color: var(--grey);
+        }
+        
+        .principle-card__content {
+            padding-top: 0.25rem;
+        }
+        
+        .principle-card__title {
+            font-family: var(--serif);
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: var(--black);
+            margin-bottom: var(--space-xs);
+        }
+        
+        .principle-card__desc {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--grey);
+        }
+        
+        /* Call to Action */
+        .principles-cta {
+            padding: var(--space-xl) 0;
+            border-top: 1px solid var(--faint);
+            text-align: center;
+        }
+        
+        .principles-cta__text {
+            font-family: var(--serif);
+            font-size: 1.35rem;
+            font-weight: 400;
+            color: var(--black);
+            margin-bottom: var(--space-md);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .principles-cta__links {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-sm);
+            flex-wrap: wrap;
+        }
+        
+        .principles-cta__link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--black);
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            transition: all var(--duration) var(--ease);
+        }
+        
+        .principles-cta__link:hover {
+            background: var(--faint);
+            border-color: var(--light);
+        }
+        
+        /* Section Label */
+        .principles-section__label {
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--light);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: var(--space-md);
+        }
+        
+        @media (max-width: 640px) {
+            .principle-card {
+                grid-template-columns: 1fr;
+                gap: var(--space-sm);
+            }
+            
+            .principle-card__number {
+                font-size: 1.75rem;
+            }
+            
+            .principles-cta__links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+    
+    <script>
+        (function() {
+            var savedTheme = localStorage.getItem('theme');
+            var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav__inner">
+            <a href="index.html" class="nav__logo">Clear, <span>not complex.</span></a>
+            
+            <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <div class="nav__menu">
+                <a href="principles.html" class="nav__link">Principles</a>
+                <a href="articles.html" class="nav__link">Articles</a>
+                <a href="visuals.html" class="nav__link">Visuals</a>
+                <a href="courses.html" class="nav__link">Courses</a>
+                <a href="tools.html" class="nav__link">Tools</a>
+                <a href="contact.html" class="nav__link">Contact</a>
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                    </svg>
+                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="page-wrapper">
+        <div class="container">
+            
+            <!-- Page Header -->
+            <header class="page-header" style="max-width: 800px;">
+                <h1 class="page-header__title">Principles</h1>
+            </header>
+            
+            <!-- Manifesto -->
+            <section class="manifesto">
+                <div class="manifesto__intro">
+                    <span class="principles-section__label">The Manifesto</span>
+                    <p>In a world of endless noise, complexity, and distraction, finding clarity in life is more important than ever. Clear, not complex — is a simple methodology of getting to the truth, where the path becomes clear. These guiding principles provide the gateway to clarity.</p>
+                </div>
+                
+                <div class="principles-grid">
+                    <div class="principle-card">
+                        <span class="principle-card__number">01</span>
+                        <div class="principle-card__content">
+                            <h3 class="principle-card__title">Simplicity Over Complexity</h3>
+                            <p class="principle-card__desc">The goal is not to add, but to subtract. Every element must earn its place. If it doesn't serve the purpose, it goes. Complexity is easy; simplicity requires courage.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="principle-card">
+                        <span class="principle-card__number">02</span>
+                        <div class="principle-card__content">
+                            <h3 class="principle-card__title">Depth Over Breadth</h3>
+                            <p class="principle-card__desc">Better to master a few things than to dabble in many. Go deep. Understand the fundamentals. True expertise comes from focused attention, not scattered effort.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="principle-card">
+                        <span class="principle-card__number">03</span>
+                        <div class="principle-card__content">
+                            <h3 class="principle-card__title">Action Over Perfection</h3>
+                            <p class="principle-card__desc">Done is better than perfect. Ship early, learn fast, iterate often. Perfectionism is procrastination in disguise. Progress requires movement.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="principle-card">
+                        <span class="principle-card__number">04</span>
+                        <div class="principle-card__content">
+                            <h3 class="principle-card__title">Intention Over Habit</h3>
+                            <p class="principle-card__desc">Question everything you do by default. Are you acting with purpose or simply following routine? Intentional living means choosing consciously, not coasting unconsciously.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="principle-card">
+                        <span class="principle-card__number">05</span>
+                        <div class="principle-card__content">
+                            <h3 class="principle-card__title">Understanding Over Information</h3>
+                            <p class="principle-card__desc">We don't need more data — we need more wisdom. Seek to understand, not just to know. Transform information into insight, insight into action.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="principle-card">
+                        <span class="principle-card__number">06</span>
+                        <div class="principle-card__content">
+                            <h3 class="principle-card__title">Focus Over Busyness</h3>
+                            <p class="principle-card__desc">Being busy is not the same as being productive. Protect your attention fiercely. Say no to the good so you can say yes to the great.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Call to Action -->
+            <section class="principles-cta">
+                <p class="principles-cta__text">Ready to embrace clarity?</p>
+                <div class="principles-cta__links">
+                    <a href="articles.html" class="principles-cta__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                        </svg>
+                        Read the Articles
+                    </a>
+                    <a href="courses.html" class="principles-cta__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                        </svg>
+                        Explore Courses
+                    </a>
+                    <a href="contact.html" class="principles-cta__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                        </svg>
+                        Get in Touch
+                    </a>
+                </div>
+            </section>
+            
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <span class="footer__copyright">© <span id="year"></span> Clear, not complex.</span>
+                <div class="footer__links">
+                    <a href="mailto:info@ClearNotComplex.com" class="footer__link">Email</a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener" class="footer__link">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Stoics Way — Clear, not complex.</title>
+    <meta name="description" content="100 insights from Stoic philosophy, organised across four essential topics to help you think and live more clearly.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <script>
+        (function() {
+            var savedTheme = localStorage.getItem('theme');
+            var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav__inner">
+            <a href="../index.html" class="nav__logo">Clear, <span>not complex.</span></a>
+            
+            <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <div class="nav__menu">
+                <a href="../principles.html" class="nav__link">Principles</a>
+                <a href="../articles.html" class="nav__link">Articles</a>
+                <a href="../visuals.html" class="nav__link">Visuals</a>
+                <a href="../courses.html" class="nav__link">Courses</a>
+                <a href="../tools.html" class="nav__link">Tools</a>
+                <a href="../contact.html" class="nav__link">Contact</a>
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                    </svg>
+                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="page-wrapper">
+        <div class="container">
+            
+            <a href="../courses.html" class="back-link">← Back to Courses</a>
+            
+            <!-- Product Header -->
+            <section class="product-single__header">
+                <div class="product-single__image">
+                    <img src="../images/placeholder-courses.svg" alt="The Stoics Way" width="600" height="400">
+                </div>
+                <div class="product-single__info">
+                    <span class="card__meta">Web App • In Progress</span>
+                    <h1>The Stoics Way</h1>
+                    <p class="product-single__tagline">100 insights from Stoic philosophy, organised across four essential topics to help you think and live more clearly.</p>
+                    <div class="product-single__links">
+                        <a href="#" class="btn btn--primary">Visit Site →</a>
+                        <a href="#" class="btn btn--outline">View on GitHub</a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Product Content -->
+            <section class="product-single__content">
+                <div class="article__content">
+                    <h2>About the Project</h2>
+                    
+                    <p>The Stoics Way is a curated collection of 100 insights drawn from the works of Marcus Aurelius, Seneca, Epictetus, and other Stoic philosophers. The goal is to make Stoic wisdom accessible, practical, and immediately applicable to modern life.</p>
+                    
+                    <p>Rather than presenting dense philosophical texts, each insight is distilled into clear, actionable guidance organised across four key themes:</p>
+                    
+                    <ul>
+                        <li><strong>The Self</strong> — Understanding and mastering your own mind</li>
+                        <li><strong>Others</strong> — Navigating relationships and social life</li>
+                        <li><strong>Adversity</strong> — Handling challenges, setbacks, and suffering</li>
+                        <li><strong>The Good Life</strong> — Living with purpose and meaning</li>
+                    </ul>
+                    
+                    <h2>Features</h2>
+                    
+                    <p>The app is designed with clarity and focus in mind:</p>
+                    
+                    <ul>
+                        <li>Daily insight delivered each morning</li>
+                        <li>Browse insights by theme or philosopher</li>
+                        <li>Save favourites to your personal collection</li>
+                        <li>Minimalist, distraction-free reading experience</li>
+                        <li>Works offline for reflection anywhere</li>
+                    </ul>
+                    
+                    <h2>Progress</h2>
+                    
+                    <p>The project is currently in active development. The content curation is complete, and I'm now focused on building the web application. Expected launch is Q2 2025.</p>
+                    
+                    <img src="../images/placeholder-courses.svg" alt="The Stoics Way Screenshot" width="680" height="400">
+                    
+                    <h2>Technology</h2>
+                    
+                    <p>Built with simplicity in mind: static HTML/CSS with vanilla JavaScript, hosted on Netlify. No frameworks, no build tools—just fast, accessible web pages that work everywhere.</p>
+                </div>
+            </section>
+            
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <span class="footer__copyright">© <span id="year"></span> Clear, not complex.</span>
+                <div class="footer__links">
+                    <a href="mailto:hello@clearnotcomplex.com" class="footer__link">Email</a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener" class="footer__link">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
